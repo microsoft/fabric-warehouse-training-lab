@@ -35,7 +35,7 @@
 -- # 🛠️ Lab setup
 -- 
 -- When deployed through Fabric Jumpstart / fabric-cicd, the workspace and lakehouse GUIDs in the OneLake paths are replaced automatically using parameter.yml.
--- The paths target warehouse_training_lab_sample_data in the destination workspace. Run the generate tpc-h data notebook before starting these labs.
+-- The paths target warehouse_training_lab_sample_data in the destination workspace. Run the generate_tpc-h_data notebook before starting these labs.
 -- If you import this notebook without fabric-cicd, update the OneLake paths to your workspace and lakehouse IDs manually.
 
 -- CELL ********************

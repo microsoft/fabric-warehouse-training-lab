@@ -8,7 +8,7 @@ and auditing data in Microsoft Fabric Warehouse using a TPC-H sample dataset.
 Deploying the lab creates the Fabric items; it does **not** generate the sample
 data or run the exercises for you.
 
-1. **Run `generate tpc-h data` first.** Open this notebook in your Fabric workspace and confirm that `warehouse_training_lab_sample_data` is its default Lakehouse. Run the package-installation cell, then the data-generation cell, and wait for generation to finish. The notebook writes the sample data to the Lakehouse's `Files/tpch_sf100` folder.
+1. **Run `generate_tpc-h_data` first.** Open this notebook in your Fabric workspace and confirm that `warehouse_training_lab_sample_data` is its default Lakehouse. Run the package-installation cell, then the data-generation cell, and wait for generation to finish. The notebook writes the sample data to the Lakehouse's `Files/tpch_sf100` folder.
 2. **Then open `warehouse_training_lab`.** Select the deployed `warehouse_training_lab` Warehouse as the notebook's data item and start with the **T-SQL** runtime. Work through the instructions and cells in order, beginning with **Getting started** and **Lab setup**. The setup cells create the warehouse tables and load the generated files; the later sections use those tables for the exercises below.
 
 **Work through the training notebook cell by cell rather than selecting Run all.**
@@ -23,7 +23,7 @@ or intentionally produce an error to demonstrate a recovery scenario.
 
 | Item | Purpose |
 | --- | --- |
-| [`generate tpc-h data`](generate%20tpc-h%20data.Notebook) | Python notebook that generates the sample data. Run this first. |
+| [`generate_tpc-h_data`](generate_tpc-h_data.Notebook) | Python notebook that generates the sample data. Run this first. |
 | [`warehouse_training_lab_sample_data`](warehouse_training_lab_sample_data.Lakehouse) | Lakehouse containing the generated Parquet files used by the ingestion exercises. |
 | [`warehouse_training_lab`](warehouse_training_lab.Warehouse) | Warehouse in which you create tables and run the SQL exercises. |
 | [`warehouse_training_lab`](warehouse_training_lab.Notebook) | Guided training notebook covering the sections described below. |
@@ -35,7 +35,7 @@ need to create another one when following the notebook's manual setup guidance.
 
 ## Data-generation notebook overview
 
-The `generate tpc-h data` notebook has two executable cells:
+The `generate_tpc-h_data` notebook has two executable cells:
 
 | Cell | What it does |
 | --- | --- |
