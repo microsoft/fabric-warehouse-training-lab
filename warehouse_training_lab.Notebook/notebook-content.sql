@@ -733,17 +733,15 @@ SELECT * FROM MySnapshot.dbo.nation
 SELECT * FROM dbo.nation
 
 -- Or recreate and load the table.
-/*
-CREATE TABLE dbo.nation
-    (
-        n_nationkey         INT             NOT NULL,
-        n_name              CHAR(25)        NOT NULL,
-        n_regionkey         INT             NOT NULL,
-        n_comment           VARCHAR(152)    NOT NULL
-    );
+-- CREATE TABLE dbo.nation
+--     (
+--         n_nationkey         INT             NOT NULL,
+--         n_name              CHAR(25)        NOT NULL,
+--         n_regionkey         INT             NOT NULL,
+--         n_comment           VARCHAR(152)    NOT NULL
+--     );
 
-COPY INTO dbo.nation FROM 'https://onelake.dfs.fabric.microsoft.com/3f101a1f-34ab-4b8c-8249-32d5b6b9dfc3/bfa3b424-c643-4ac3-91f8-c01e560e5ce9/Files/tpch_sf100/nation/*.parquet'     WITH (FILE_TYPE = 'PARQUET');
-*/
+-- COPY INTO dbo.nation FROM 'https://onelake.dfs.fabric.microsoft.com/3f101a1f-34ab-4b8c-8249-32d5b6b9dfc3/bfa3b424-c643-4ac3-91f8-c01e560e5ce9/Files/tpch_sf100/nation/*.parquet'     WITH (FILE_TYPE = 'PARQUET');
 
 -- METADATA ********************
 
@@ -1170,7 +1168,7 @@ workspace_part = base64.b32encode(uuid.UUID(workspace_id).bytes_le).decode("utf-
 
 sql_endpoint = f"{tenant_part}-{workspace_part}.datawarehouse.fabric.microsoft.com"
 
-warehouse_name = "day_02_warehouse"
+warehouse_name = "warehouse_training_lab"
 
 # Build Azure AD token structure for ODBC
 value = bytes(token, "UTF-8")
@@ -1868,7 +1866,7 @@ SELECT
     al.application_name,
     al.statement
 FROM sys.fn_get_audit_file_v2
-    ('https://onelake.blob.fabric.microsoft.com/3f101a1f-34ab-4b8c-8249-32d5b6b9dfc3/d2554691-578f-4b93-be79-af6bcbe97f0f/Audit/sqldbauditlogs/', default, default, default, default) AS al
+    ('https://onelake.blob.fabric.microsoft.com/3f101a1f-34ab-4b8c-8249-32d5b6b9dfc3/cbe97f0f-af6b-be79-4b93-578fd2554691/Audit/sqldbauditlogs/', default, default, default, default) AS al
 LEFT JOIN sys.dm_audit_actions AS aa ON al.action_id COLLATE Latin1_General_100_CI_AS_KS_WS_SC_UTF8 = aa.action_id
 ORDER BY event_time DESC
 
