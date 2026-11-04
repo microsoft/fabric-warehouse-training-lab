@@ -33,7 +33,7 @@
 # CELL ********************
 
 # Install LakeBench and its optional extras
-!pip install lakebench[tpch_datagen,tpcds_datagen]==1.2.0
+!pip install lakebench[tpch_datagen,tpcds_datagen]
 
 
 # METADATA ********************
